@@ -36,7 +36,11 @@ Version 4.0: 16 GT/s
 della-i16g1 has NVIDIA A100-SXM-80GB
 
 
+## CUDA Toollkit 11.x and cuDNN 8.x
 
+The features found in the A100 can only be fully leveraged when software that has been explicitly written for it. Some codes work with 10.x but you will not be able to use the latest features. Be sure to use 11 whenever possible.
+
+## Topology
 
 adroit A100
 

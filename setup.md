@@ -8,7 +8,7 @@
 
 + Open a terminal (e.g., Terminal, iTerm2, PowerShell, MobaXterm, PuTTY) <a href="https://researchcomputing.princeton.edu/learn/workshops-live-training/requirements-picscie-virtual-workshops" target="_blank">(help)</a>
 
-+ SSH to Adroit [(help)](https://researchcomputing.princeton.edu/faq/why-cant-i-login-to-a-clu). If you need an account then [request one]((https://forms.rc.princeton.edu/registration/?q=adroit)) on Adroit.
++ SSH to Adroit [(help)](https://researchcomputing.princeton.edu/faq/why-cant-i-login-to-a-clu). If you need an account then [request one](https://forms.rc.princeton.edu/registration/?q=adroit) on Adroit.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you have used graphical windows via X11 forwarding on the HPC clusters before then run the following command (with the appropriate X server running on your local machine):
 

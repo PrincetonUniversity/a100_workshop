@@ -6,7 +6,7 @@ Certain MPI codes that use GPUs may benefit from CUDA MPS (see [ORNL docs](https
 #SBATCH --gpu-mps
 ```
 
-This NVIDIA [blog post](https://developer.nvidia.com/blog/maximizing-gromacs-throughput-with-multiple-simulations-per-gpu-using-mps-and-mig/) details the use of MPS and MIG for GROMACS.
+In most cases users will see no speed-up. Codes where the individual MPI processes underutilize the GPU should see a performance gain. This NVIDIA [blog post](https://developer.nvidia.com/blog/maximizing-gromacs-throughput-with-multiple-simulations-per-gpu-using-mps-and-mig/) details the use of MPS and MIG for GROMACS.
 
 # GPUDirect
 

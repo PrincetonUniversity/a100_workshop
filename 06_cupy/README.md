@@ -20,11 +20,7 @@ u, s, v = cp.linalg.svd(X)
 
 ## CuPy uses Tensor Cores
 
-CuPy can take advantage of the A100 since the release of version 8 of CuPy. 
-
-
-
-CuPy can be made use TensorFloat32 for FP32 matrix-matrix multiplies:
+CuPy can take advantage of the A100 since the release of version 8 of CuPy. It can be made use TensorFloat32 for FP32 matrix-matrix multiplies. However, by default this is turned off. Consider the following Python code below:
 
 ```python
 import cupy as cp
@@ -45,6 +41,58 @@ for _ in range(3):
 print(min(times))
 ```
 
+Try running the code on the V100 and A100.
+
+#### Case 1
+
+$ cd a100_workshop/05_cupy
+
+```
+#SBATCH --constraint=v100
+```
+
+Make the last line of `job.slurm`:
+
+```
+python myscript.py
+```
+
+Submit the job and record the run time:
+
+```
+$ sbatch job.slurm
+```
+
+#### Case 2
+
+Run the code on the A100 GPU with TF32 turned off. Modify `job.slurm` as follows:
+
+```
+#SBATCH --constraint=a100
+```
+
+And the last line should be:
+
+```
+CUPY_TF32=0 python myscript.py
+```
+
+
+#### Case 3
+
+Run the code on the A100 GPU with TF32 turned off. Modify `job.slurm` as follows:
+
+```
+#SBATCH --constraint=a100
+```
+
+And the last line should be:
+
+```
+CUPY_TF32=1 python myscript.py
+```
+
+
 ```bash
 #!/bin/bash
 #SBATCH --job-name=myjob         # create a short name for your job
@@ -55,14 +103,15 @@ print(min(times))
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --time=00:01:00          # total run time limit (HH:MM:SS)
 #SBATCH --constraint=a100        # v100 or a100
+#SBATCH --reservation=a100       # REMOVE THIS LINE AFTER THE WORKSHOP
 
 module purge
 module load anaconda3/2020.11
-conda activate /scratch/network/jdh4/CONDA/envs/cupy-env  # make in a100-wksp directory
+conda activate /scratch/network/jdh4/CONDA/envs/cupy-env
 
-# python myscript.py
-# CUPY_TF32=0 python myscript.py
-CUPY_TF32=1 python myscript.py
+# python myscript.py               # case 1
+# CUPY_TF32=0 python myscript.py   # case 2
+# CUPY_TF32=1 python myscript.py   # case 3
 ```
 
 Below are the results:

@@ -64,6 +64,32 @@ Legend:
   NV#  = Connection traversing a bonded set of # NVLinks
 ```
 
+For comparison see the [topology for Traverse](https://researchcomputing.princeton.edu/systems/traverse#smt) which gives:
+
+```
+# ssh traverse
+$ salloc -N 1 -n 1 -t 1 --gres=gpu:4
+$ nvidia-smi topo -m
+	GPU0	mlx5_0	mlx5_1	mlx5_2	mlx5_3	CPU Affinity	NUMA Affinity
+GPU0	 X 	SYS	SYS	SYS	SYS	0-3	0,8,252-255
+mlx5_0	SYS	 X 	PIX	SYS	SYS		
+mlx5_1	SYS	PIX	 X 	SYS	SYS		
+mlx5_2	SYS	SYS	SYS	 X 	PIX		
+mlx5_3	SYS	SYS	SYS	PIX	 X 		
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+```
+
+
+
 ### NUMA domains on the CPU
 
 Both GPU nodes have two CPUs as revealed by lscpu. The memory of the two CPUs is made to behave like one large memory pool using NUMA (non-uniform memory access). Use the command below to see which CPU-cores belong to which NUMA  domain:

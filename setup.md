@@ -6,7 +6,7 @@
 
 + Connect to the eduroam wireless network
 
-+ Open a terminal (e.g., Terminal, iTerm2, PowerShell, MobaXterm, PuTTY) <a href="https://researchcomputing.princeton.edu/education/training/hardware-and-software-requirements-picscie-workshops" target="_blank">(help)</a>
++ Open a terminal (e.g., Terminal, iTerm2, PowerShell, MobaXterm, PuTTY) <a href="https://researchcomputing.princeton.edu/learn/workshops-live-training/requirements-picscie-virtual-workshops" target="_blank">(help)</a>
 
 + SSH to Adroit [(help)](https://researchcomputing.princeton.edu/faq/why-cant-i-login-to-a-clu). If you need an account then request one on [Adroit](https://forms.rc.princeton.edu/registration/?q=adroit).
 

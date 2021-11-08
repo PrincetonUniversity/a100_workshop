@@ -4,6 +4,31 @@ See the [Hardware Resources](https://researchcomputing.princeton.edu/support/kno
 
 # Adroit (Hands-on Exercises)
 
+```
+$ ssh <YourNetID>@adriot.princeton.edu
+$ shownodes  # or snodes
+NODELIST      PART   STATE      FREE/TOTAL CPUs  CPU_LOAD  FREE/TOTAL MEMORY  FREE/TOTAL GPUs   FEATURES
+adroit-01     class  idle                 28/28      0.00    120536/128000Mb                   broadwell
+adroit-02     class  idle                 28/28      0.00    120551/128000Mb                   broadwell
+adroit-03     class  idle                 28/28      0.00    120597/128000Mb                   broadwell
+adroit-04     class  idle                 28/28      0.54    120595/128000Mb                   broadwell
+adroit-05     class  idle                 28/28      0.00    120620/128000Mb                   broadwell
+adroit-06     class  idle                 28/28      0.00    120606/128000Mb                   broadwell
+adroit-07     class  idle                 28/28      0.00    120608/128000Mb                   broadwell
+adroit-08     all    mixed                 6/32     20.25    195921/384000Mb                     skylake
+adroit-09     all    mixed                 7/32     21.42    210347/384000Mb                     skylake
+adroit-10     all    drained               0/32      0.00    383312/384000Mb                     skylake
+adroit-11     all    drained               0/32      0.37    383437/384000Mb                     skylake
+adroit-12     all    idle                 32/32      0.00    383504/384000Mb                     skylake
+adroit-13     all    mixed                25/32      3.31    271857/384000Mb                     skylake
+adroit-14     all    mixed                31/32      1.00    382839/384000Mb                     skylake
+adroit-15     all    mixed                28/32      4.42    379556/384000Mb                     skylake
+adroit-16     all    mixed                 4/32      9.16    177025/384000Mb                     skylake
+adroit-h11g1  gpu    mixed                39/40      1.07    761845/770000Mb   3/4 tesla_v100       v100
+adroit-h11g2  gpu    idle                 48/48      0.00  1014561/1000000Mb  4/4 nvidia_a100       a100
+adroit-h11n1  class  mixed              109/128      0.01    238074/256000Mb                    amd,rome
+```
+
 You can learn about NVIDIA GPU using the commands:
 
 ```bash

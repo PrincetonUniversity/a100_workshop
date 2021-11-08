@@ -2,7 +2,9 @@
 
 [NumPy](https://numpy.org) is a Python library for numerical computing on CPUs. [CuPy](https://cupy.dev) is a drop-in replacement for NumPy on GPUs:
 
-### NumPy
+#### NumPy
+
+NumPy code runs on CPUs:
 
 ```python
 import numpy as np
@@ -10,7 +12,9 @@ X = np.random.randn(100, 100)
 u, s, v = np.linalg.svd(X)
 ```
 
-### CuPy
+#### CuPy
+
+CuPy code runs on GPUs:
 
 ```python
 import cupy as cp

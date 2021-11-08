@@ -126,13 +126,21 @@ You do not need to install anything for the live workshop. Later on you can use 
 
 #### Conda
 
+Make sure you get CUDA Toolkit 11.x to take full advantage of the A100 GPUs:
+
 ```bash
 $ module load anaconda3/2020.11
 $ conda create --name cupy-env cupy --channel conda-forge
 ```
 
+For more on Conda environments see [Python on the HPC Clusters](https://researchcomputing.princeton.edu/support/knowledge-base/python).
+
 #### Singularity
+
+Find the tag for the desired version on the [CuPy DockerHub repo](https://hub.docker.com/r/cupy/cupy) then pull the container:
 
 ```
 $ singularity pull docker://cupy/cupy:v9.5.0
 ```
+
+Learn more about [Singularity](https://researchcomputing.princeton.edu/support/knowledge-base/singularity).

@@ -20,19 +20,7 @@ u, s, v = cp.linalg.svd(X)
 
 ## CuPy uses Tensor Cores
 
-CuPy can take advantage of the A100 since the release of version 8 of CuPy. When installing via Anaconda or using a container, make sure you get the software built against CUDA Toolkit 11.x. For instance, with Conda:
-
-```
-  ...
-  cudatoolkit        conda-forge/linux-64::cudatoolkit-11.5.0-h36ae40a_9
-  cupy               conda-forge/linux-64::cupy-9.5.0-py39h499daff_0
-  ...
-```
-
-
-```
-
-Make sure you get CUDA toolkit 11.x and CuPy > 8.x:
+CuPy can take advantage of the A100 since the release of version 8 of CuPy. 
 
 
 
@@ -131,6 +119,15 @@ Make sure you get CUDA Toolkit 11.x to take full advantage of the A100 GPUs:
 ```bash
 $ module load anaconda3/2020.11
 $ conda create --name cupy-env cupy --channel conda-forge
+```
+
+When installing via Anaconda or using a container, make sure you get the software built against CUDA Toolkit 11.x. For instance, with Conda:
+
+```
+  ...
+  cudatoolkit        conda-forge/linux-64::cudatoolkit-11.5.0-h36ae40a_9
+  cupy               conda-forge/linux-64::cupy-9.5.0-py39h499daff_0
+  ...
 ```
 
 For more on Conda environments see [Python on the HPC Clusters](https://researchcomputing.princeton.edu/support/knowledge-base/python).

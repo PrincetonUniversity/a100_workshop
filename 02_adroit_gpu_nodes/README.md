@@ -4,6 +4,8 @@ See the [Hardware Resources](https://researchcomputing.princeton.edu/support/kno
 
 # Adroit (Hands-on Exercises)
 
+![Adroit Diagram](images/adroit_2021-10-18.png)
+
 ```
 $ ssh <YourNetID>@adriot.princeton.edu
 $ shownodes  # or snodes

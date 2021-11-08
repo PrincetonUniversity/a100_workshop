@@ -8,6 +8,7 @@ Certain MPI codes that use GPUs may benefit from CUDA MPS (see [ORNL docs](https
 
 In most cases users will see no speed-up. Codes where the individual MPI processes underutilize the GPU should see a performance gain. This NVIDIA [blog post](https://developer.nvidia.com/blog/maximizing-gromacs-throughput-with-multiple-simulations-per-gpu-using-mps-and-mig/) details the use of MPS and MIG for GROMACS.
 
+
 # GPUDirect
 
 Using [GPUDirect](https://developer.nvidia.com/gpudirect), multiple GPUs, network adapters, solid-state drives and NVMe drives can directly read and write CUDA host and device memory, eliminating unnecessary memory copies, dramatically lowering CPU overhead, and reducing latency, resulting in significant performance improvements in data transfer times for applications running on NVIDIA GPUs.
@@ -15,6 +16,7 @@ Using [GPUDirect](https://developer.nvidia.com/gpudirect), multiple GPUs, networ
 ![gpu-direct](https://developer.nvidia.com/sites/default/files/akamai/GPUDirect/cuda-gpu-direct-blog-refresh_diagram_1.png)
 
 On `della-gpu` we have [GDRCopy](https://github.com/NVIDIA/gdrcopy) installed (see `/lib64/libgdrapi.so`). GPUDirect is also available on Traverse.
+
 
 # CUDA-Aware MPI
 

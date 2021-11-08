@@ -88,6 +88,27 @@ Legend:
   NV#  = Connection traversing a bonded set of # NVLinks
 ```
 
+Here is the topology for the new CryoEM nodes which may be used for TigerGPU:
+
+```
+[aturing@della-i16g1 ~]$ nvidia-smi topo -m
+	GPU0	GPU1	GPU2	GPU3	mlx5_0	CPU Affinity	NUMA Affinity
+GPU0	 X 	NV4	NV4	NV4	NODE	0-23	0
+GPU1	NV4	 X 	NV4	NV4	NODE	0-23	0
+GPU2	NV4	NV4	 X 	NV4	SYS	24-47	1
+GPU3	NV4	NV4	NV4	 X 	SYS	24-47	1
+mlx5_0	NODE	NODE	SYS	SYS	 X 		
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+```
 
 
 ### NUMA domains on the CPU

@@ -41,17 +41,23 @@ for _ in range(3):
 print(min(times))
 ```
 
-Try running the code on the V100 and A100.
+Follow the directions below to run the code above on the V100 and A100. We will consider two cases on the A100: one with TF32 and one without.
 
 #### Case 1
 
+Run the code on the V100 GPU.
+
+```
 $ cd a100_workshop/05_cupy
+```
+
+Then make sure that the `v100` will be used:
 
 ```
 #SBATCH --constraint=v100
 ```
 
-Make the last line of `job.slurm`:
+And make the last line of `job.slurm`:
 
 ```
 python myscript.py

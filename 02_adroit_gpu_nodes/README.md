@@ -1,4 +1,4 @@
-# What GPU resources does Princeton have?
+# What GPU resources does Princeton Research Computing have?
 
 See the [Hardware Resources](https://researchcomputing.princeton.edu/support/knowledge-base/gpu-computing#hardware)" on the [GPU Computing](https://researchcomputing.princeton.edu/support/knowledge-base/gpu-computing) page for a complete list.
 

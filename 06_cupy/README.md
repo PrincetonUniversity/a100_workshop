@@ -1,5 +1,26 @@
 # CuPy
 
+NumPy is a Python library for numerical computing on CPUs. CuPy is a drop-in replacement for NumPy on GPUs:
+
+### NumPy
+
+```python
+import numpy as np
+X = np.random.randn(100, 100)
+u, s, v = np.linalg.svd(X)
+```
+
+### CuPy
+
+```python
+import cupy as cp
+X = cp.random.randn(100, 100)
+u, s, v = cp.linalg.svd(X)
+``
+
+CuPy is similar to NumPy except it is designed for GPUs instead of CPUs.
+
+
 ```bash
 $ module load anaconda3/2020.11
 $ conda create --name cupy-env cupy --channel conda-forge

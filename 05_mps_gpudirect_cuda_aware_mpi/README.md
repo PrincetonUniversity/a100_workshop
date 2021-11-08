@@ -15,6 +15,8 @@ Using [GPUDirect](https://developer.nvidia.com/gpudirect), multiple GPUs, networ
 
 ![gpu-direct](https://developer.nvidia.com/sites/default/files/akamai/GPUDirect/cuda-gpu-direct-blog-refresh_diagram_1.png)
 
+One can use GPUDirect via [cudf of NVIDIA Rapids](https://docs.rapids.ai/api/cudf/nightly/basics/io-gds-integration.html).
+
 On `della-gpu` we have [GDRCopy](https://github.com/NVIDIA/gdrcopy) installed (see `/lib64/libgdrapi.so`). GPUDirect is also available on Traverse.
 
 

@@ -20,11 +20,11 @@ The table below presents the key differences between a CPU and a GPU:
 | **control logic** |  performs well  | performs poorly |
 | **model**| task parallelism |SIMT|
 
+An example of control logic would be an "if" statement. SIMT is single instruction, multiple threads. This is where each thread performs the same operation on different data. Multicore CPUs can perform very different tasks on different cores simultaneously. The cores on a GPU must all perform the same operation on the scale of a warp, which is a group of threads.
+
 The schematic diagram below shows an example distribution of chip resources for a CPU versus a GPU:
 
 ![cpu_vs_gpu](https://docs.nvidia.com/cuda/cuda-c-programming-guide/graphics/gpu-devotes-more-transistors-to-data-processing.png)
-
-An example of control logic would be an "if" statement. SIMT is single instruction, multiple threads. This is where each thread performs the same operation on different data. Multicore CPUs can perform very different tasks on different cores simultaneously. The cores on a GPU must all perform the same operation on the scale of a warp, which is a group of threads.
 
 # AMD GPUs for HPC
 

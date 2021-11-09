@@ -182,7 +182,7 @@ Find the tag for the desired version on the [CuPy DockerHub repo](https://hub.do
 ```
 $ singularity pull docker://cupy/cupy:v9.5.0
 $ singularity shell --containall cupy_v9.5.0.sif
-Singularity> find . -name "*cuda-11*" -type d 2>/dev/null
+Singularity> find / -name "*cuda-11*" -type d 2>/dev/null
 ./usr/local/cuda-11.2
 Singularity> exit
 ```

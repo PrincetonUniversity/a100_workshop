@@ -124,7 +124,7 @@ Below are the results:
 
 Rows 1 and 2 indicate that the A100 gives a speed-up of 1.3x over the V100. When the computation is performed in TensorFloat32 the speed-up is 6.5x. Is there a loss of precision?
 
-```
+```bash
 $ salloc -N 1 -n 1 -t 5 --gres=gpu:1 --constraint=a100
 $ module load anaconda3/2020.11
 $ conda activate /scratch/network/jdh4/CONDA/envs/cupy-env
@@ -138,7 +138,7 @@ array([[ 3.3182788 ,  1.1980604 ,  1.2314391 ],
 >>> exit()
 ```
 
-```
+```bash
 $ env CUPY_TF32=1 CUPY_SEED=42 python
 >>> import cupy as cp
 >>> X = cp.random.randn(3, 3, dtype=cp.float32)

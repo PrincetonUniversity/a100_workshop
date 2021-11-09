@@ -7,10 +7,7 @@ Here we compile and run two GPU codes using the two most popular programming mod
 The CUDA code is available within this repo:
 
 ```bash
-$ ssh <YourNetID>@adroit.princeton.edu
-$ cd /scratch/network/$USER
-$ git clone https://github.com/PrincetonUniversity/a100_workshop.git
-$ cd a100_workshop/03_programming_review
+$ cd a100_workshop/03_programming_review/code
 ```
 
 Identify the lines were (1) the data is being sent to the GPU, (2) the GPU kernel is called and (3) the lines where the data is copied back from the GPU to the CPU:
@@ -19,18 +16,18 @@ Identify the lines were (1) the data is being sent to the GPU, (2) the GPU kerne
 $ vim vector_addition.cu  # or emacs, micro, nano, cat
 ```
 
-Run the following commands to compile and run a CUDA code on the A100 GPU:
+Run the following commands to compile and run the code on the A100 GPU:
 
 ```bash
 $ module load cudatoolkit/11.4
 $ nvcc -O3 -arch=sm_80 -o vector_addition vector_addition.cu  # sm_70 for V100, sm_80 for A100
-$ sbatch job.slurm  # edit email address
+$ sbatch job.slurm
 $ cat slurm-*.out
 ```
 
 Note that you can build an executable for both the V100 and A100 with `-arch=sm_70,sm_80`.
 
-This involves a small array of 2000 elements.
+Don't worry about measuring the performance difference between the CPU and the GPU. The purpose of this exercise is simply to revisit CUDA.
 
 ## Aside on GPU Utilization
 

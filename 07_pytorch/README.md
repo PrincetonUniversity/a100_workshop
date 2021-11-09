@@ -40,17 +40,18 @@ $ cd a100_workshop/07_pytorch/code
 $ sbatch job.slurm
 ```
 
-
 ## AMP
+
+Mixed-precision training in PyTorch is done through [AMP](https://pytorch.org/docs/stable/amp.html).
 
 ## dlprof
 
+The deep learning profiler from NVIDIA is called `dlprof`. See a sample script [here](https://github.com/PrincetonUniversity/gpu_programming_intro/blob/master/04_gpu_tools/README.md#dlprof).
 
 # Useful Links
 
 [data types](https://pytorch.org/docs/stable/tensor_attributes.html)  
 [About TensorFloat32](https://pytorch.org/docs/stable/notes/cuda.html)  
-[AMP](https://pytorch.org/docs/stable/amp.html)  
 [AMP Examples](https://pytorch.org/docs/stable/notes/amp_examples.html)  
 [Blog Post on AMP Benchmarks](https://pytorch.org/blog/accelerating-training-on-nvidia-gpus-with-pytorch-automatic-mixed-precision/)  
 [NVIDIA Deepp Learning Examples](https://github.com/NVIDIA/DeepLearningExamples)  

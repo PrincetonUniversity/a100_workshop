@@ -42,6 +42,8 @@ $ cd a100_workshop/07_pytorch/code
 $ sbatch job.slurm
 ```
 
+See the [PyTorch](https://github.com/PrincetonUniversity/install_pytorch) page from Research Computing.
+
 ## Automatic Mixed Precision (AMP)
 
 Mixed-precision training in PyTorch is done through [AMP](https://pytorch.org/docs/stable/amp.html).

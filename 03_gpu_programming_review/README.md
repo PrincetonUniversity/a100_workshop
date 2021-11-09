@@ -7,7 +7,7 @@ Here we compile and run two GPU codes using the two most popular programming mod
 The CUDA code is available within this repo:
 
 ```bash
-$ cd a100_workshop/03_programming_review/code
+$ cd a100_workshop/03_gpu_programming_review/code
 ```
 
 Identify the lines were (1) the data is being sent to the GPU, (2) the GPU kernel is called and (3) the lines where the data is copied back from the GPU to the CPU:

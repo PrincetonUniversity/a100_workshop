@@ -35,6 +35,8 @@ error = (ab_fp32 - ab_full).abs().max()
 relative_error = error / mean
 ```
 
+Run the commands below to see the performance difference between the two cases:
+
 ```
 $ cd a100_workshop/07_pytorch/code
 $ sbatch job.slurm

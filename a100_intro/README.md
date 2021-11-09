@@ -8,7 +8,7 @@ The main line of execution runs on the CPU. At times, work is offloaded to the G
 
 As shown in the figure above, the code is executed by the CPU. After the file is read, the data is transferred from CPU memory to GPU memory. The `matrix_inverse` kernel is carried out on the GPU. The output is then copied from GPU memory to CPU memory. Lastly, the result is written to a file. Note that this is a highly simplified view of how things work.
 
-The table below present some of the key differences between CPUs and GPUs:
+The table below presents the key differences between a CPU and a GPU:
 
 |                      | **CPU**                      |  **GPU**       |
 |:--------------------:|:------------------------:|:----------:|

@@ -65,13 +65,13 @@ The NVIDIA A100 was released in 2020. The slides below are taken from the [GTC 2
 ![models](images/a100_four_models.png)<p>
 ![sparsity](images/a100_sparsity.jpg)<p>
 ![floating](images/a100_floating.jpg)<p>
+![cublas](images/a100_cublas.jpg)  
 ![memory](images/a100_memory.png)<p>
 ![sms](images/a100_108_sm.jpg)<p>
 ![ampere](images/a100_sm_diagram.png)<p>
 ![sm](images/a100_sm.jpg)<p>
 ![a100_vs_v100](images/a100_vs_v100.jpg)<p>
 ![nsys](images/a100_nsys.jpg)<p>
-![cublas](images/a100_cublas.jpg)  
 
 # NVIDIA CUDA Toolkit 11 and cuDNN 8
   

@@ -40,7 +40,7 @@ $ cd a100_workshop/07_pytorch/code
 $ sbatch job.slurm
 ```
 
-## AMP
+## Automatic Mixed Precision (AMP)
 
 Mixed-precision training in PyTorch is done through [AMP](https://pytorch.org/docs/stable/amp.html).
 

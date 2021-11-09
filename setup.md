@@ -22,4 +22,11 @@ $ ssh -X <YourNetID>@adroit.princeton.edu
 $ ssh <YourNetID>@adroit.princeton.edu
 ```
 
++ Clone the repo:
+
+```
+$ cd /scratch/network/$USER
+$ git clone https://github.com/PrincetonUniversity/a100_workshop.git
+```
+
 + Go to the main page by [clicking here](https://github.com/PrincetonUniversity/a100_workshop).

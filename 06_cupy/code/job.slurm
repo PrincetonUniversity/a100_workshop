@@ -15,11 +15,6 @@ conda activate /scratch/network/jdh4/CONDA/envs/cupy-env
 
 echo "GPU is " $(nvidia-smi -q | grep Product | uniq)
 
-# case 1
-python myscript.py
-
-# case 2
-#CUPY_TF32=0 python myscript.py
-
-# case 3
-#CUPY_TF32=1 python myscript.py
+python myscript.py               # case 1
+# CUPY_TF32=0 python myscript.py   # case 2
+# CUPY_TF32=1 python myscript.py   # case 3

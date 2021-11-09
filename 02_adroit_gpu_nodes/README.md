@@ -75,7 +75,7 @@ Legend:
   NV#  = Connection traversing a bonded set of # NVLinks
 ```
  
-'mlx5_0' is the Mellanox network adapter. SYS indicates P2P and GPUDirect RDMA transactions cannot follow that path.
+`mlx5_0` is the Mellanox network adapter. SYS indicates P2P and GPUDirect RDMA transactions cannot follow that path.
 
 For comparison see the [topology for Traverse](https://researchcomputing.princeton.edu/systems/traverse#smt) which gives:
 

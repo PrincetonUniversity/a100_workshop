@@ -6,7 +6,7 @@ The main line of execution runs on the CPU. At times, work is offloaded to the G
 
 ![gpu-overview](https://tigress-web.princeton.edu/~jdh4/gpu_as_accelerator_to_cpu_diagram.png)
 
-As shown in the figure above, the code is executed by the CPU. After the file is read, the date is transferred from CPU memory to GPU memory. The `matrix_inverse` kernel is carried out on the GPU. The output is copied from GPU to CPU memory where it is then written to file. Note that this is a highly simplified view of how things work.
+As shown in the figure above, the code is executed by the CPU. After the file is read, the data is transferred from CPU memory to GPU memory. The `matrix_inverse` kernel is carried out on the GPU. The output is then copied from GPU memory to CPU memory. Lastly, the result is written to a file. Note that this is a highly simplified view of how things work.
 
 The table below present some of the key differences between CPUs and GPUs:
 
@@ -19,7 +19,7 @@ The table below present some of the key differences between CPUs and GPUs:
 | **control logic** |  performs well  | performs poorly |
 | **model**| task parallelism |SIMT|
 
-An example of control logic would be an "if" statement. SIMT is single instruction, multiple threads. This is where each thread performs the same operation on different data. Multicore CPUs can perform very different tasks on different cores simultaneously. The cores on a GPU must all be doing the same operations on the scale of a warp, which is a group of threads.
+An example of control logic would be an "if" statement. SIMT is single instruction, multiple threads. This is where each thread performs the same operation on different data. Multicore CPUs can perform very different tasks on different cores simultaneously. The cores on a GPU must all perform the same operation on the scale of a warp, which is a group of threads.
 
 # AMD GPUs for HPC
 

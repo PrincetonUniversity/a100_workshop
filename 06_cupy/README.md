@@ -85,7 +85,7 @@ Modify `job.slurm` as follows:
 
 And make the last three lines appear as follows:
 
-```
+```bash
 # python myscript.py               # case 1
 CUPY_TF32=0 python myscript.py   # case 2
 # CUPY_TF32=1 python myscript.py   # case 3
@@ -103,7 +103,7 @@ Modify `job.slurm` as follows:
 
 And make the last three lines appear as follows:
 
-```
+```bash
 # python myscript.py               # case 1
 # CUPY_TF32=0 python myscript.py   # case 2
 CUPY_TF32=1 python myscript.py   # case 3

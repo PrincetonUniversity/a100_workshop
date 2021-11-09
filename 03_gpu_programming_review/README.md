@@ -71,6 +71,6 @@ Once again don't worry about the performance. This exercise is only meant to ser
 
 ## Useful Links
 
-[CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)  
 [CUDA C++ Programming Guide by NVIDIA](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)  
+[CUDA Fortran Programming Guide by NVIDIA](https://docs.nvidia.com/hpc-sdk/compilers/cuda-fortran-prog-guide/index.html)  
 [www.openacc.org](https://www.openacc.org)  

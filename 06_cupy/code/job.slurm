@@ -13,7 +13,7 @@ module purge
 module load anaconda3/2020.11
 conda activate /scratch/network/jdh4/CONDA/envs/cupy-env
 
-echo "GPU is " $(nvidia-smi -q | grep Product | uniq)
+echo "GPU is " $(nvidia-smi -a | grep "Product Name" | awk '{print $(NF)}')
 
 python myscript.py               # case 1
 # CUPY_TF32=0 python myscript.py   # case 2

@@ -51,11 +51,11 @@ All the available "Ponte Vecchio" GPUs are going to build Aurora. Princeton will
 
 The NVIDIA A100 was released in 2020. The slides below are taken from the [GTC 2020 keynote talk](https://www.youtube.com/watch?v=onbnb_D1wC8&t=179s) and [this talk](https://www.youtube.com/watch?v=NXSsZTGNqzk).
 
-![features](images/keynote_features.jpg)<p>
-![flops2](images/keynote_v100_a100_flops_2.jpg)<p>
-![floating](images/keynote_floating.jpg)<p>
-![sparsity](images/keynote_sparsity.jpg)<p>
-![mig](images/keynote_mig.jpg)<p>
+![features](images/keynote_features.jpg)<p>  
+![floating](images/keynote_floating.jpg)<p>  
+![flops2](images/keynote_v100_a100_flops_2.jpg)<p>  
+![sparsity](images/keynote_sparsity.jpg)<p>  
+![mig](images/keynote_mig.jpg)<p>  
 ![stats](images/a100_stats.jpg)<p>
 ![models](images/a100_four_models.png)<p>
 ![sparsity](images/a100_sparsity.jpg)<p>

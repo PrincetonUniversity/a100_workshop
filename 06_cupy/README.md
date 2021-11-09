@@ -158,7 +158,7 @@ COMPUTE_TYPE_BF16 and COMPUTE_TYPE_TF32 are only available on GPUs with compute 
 COMPUTE_TYPE_DEFAULT will be used instead.
 ```
 
-The suggests that CuPy may one day support `bfloat16`.
+The above suggests that CuPy may one day support `bfloat16`.
 
 More can be done with [CUB and cuTensor](https://tech.preferred.jp/en/blog/cupy-v8/). CuPy can do half-precision FFTs.
 

@@ -171,8 +171,6 @@ VPU is vector processing unit, FMA is fused multiply-add, 8 OPS/VPU is the width
 
 ## Bandwidth Test
 
-# Bandwidth Test
-
 GPU memory reads are extremely fast and need to be since there are thousands of execution units that must be fed. But what about the bandwidth of transfer between the CPU and the GPU? PCIe versus SXM2
 
 Take a look at the [Della-GPU page](https://researchcomputing.princeton.edu/systems/della#gpus) to see the reported bandwidth.

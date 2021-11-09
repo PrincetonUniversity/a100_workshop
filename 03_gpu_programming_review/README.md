@@ -1,6 +1,6 @@
 # GPU Programming Review
 
-Here we compile and run two GPU codes using the two most popular GPU programming models, namely, CUDA and OpenACC. No previous experience is needed. We will consider the case of element-wise vector addition.
+Here we compile and run two GPU codes using the two most popular programming models, namely, CUDA and OpenACC. Previous experience is not necessary. We will consider the case of element-wise vector addition.
 
 ## CUDA (Hands-on Exercise)
 

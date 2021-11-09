@@ -2,7 +2,7 @@
 
 See the [Hardware Resources](https://researchcomputing.princeton.edu/support/knowledge-base/gpu-computing#hardware) on the [GPU Computing](https://researchcomputing.princeton.edu/support/knowledge-base/gpu-computing) page for a complete list.
 
-# Adroit (Hands-on Exercises)
+# Adroit
 
 ![Adroit Diagram](../01_a100_overview/images/adroit_2021-10-18.png)
 
@@ -31,7 +31,9 @@ adroit-h11g2  gpu    idle                 48/48      0.00  1014561/1000000Mb  4/
 adroit-h11n1  class  mixed              109/128      0.01    238074/256000Mb                    amd,rome
 ```
 
-You can learn about NVIDIA GPU using the commands:
+## Hands-on Exercise
+
+Learn about NVIDIA GPU nodes on Adroit using the following commands:
 
 ```bash
 $ ssh <YourNetID>@adriot.princeton.edu

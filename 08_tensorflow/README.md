@@ -18,7 +18,7 @@ See our [TensorFlow](https://researchcomputing.princeton.edu/support/knowledge-b
 
 ## Tensor Cores
 
-TensorFlow using TF32 in place a single precision for matrix-matrix multiplications and convolutions by default. [Mixed precision](https://www.tensorflow.org/guide/mixed_precision).
+TensorFlow uses TF32 in place a single precision for matrix-matrix multiplications and convolutions by default.
 
 ```
 #!/bin/bash
@@ -32,7 +32,7 @@ TensorFlow using TF32 in place a single precision for matrix-matrix multiplicati
 #SBATCH --constraint=a100
 
 module purge
-singularity exec --nv ../../a100_wksp/containers/tensorflow_21.10-tf2-py3.sif python3 mnist_classify.py
+singularity exec --nv /scratch/network/jdh4/a100_wksp/containers/tensorflow_21.10-tf2-py3.sif python3 mnist_classify.py
 ```
 
 You should see the following in the output file:
@@ -42,3 +42,11 @@ TensorFloat-32 will be used for the matrix multiplication
 ```
 
 This is an indication of the FP32 MM being done in TF32.
+
+## Mixed precision
+
+Mixed-precision training in TensorFlow is explained in the [mixed precision guide](https://www.tensorflow.org/guide/mixed_precision).
+
+## dlprof
+
+The deep learning profiler from NVIDIA is called `dlprof`. See a sample script [here](https://github.com/PrincetonUniversity/gpu_programming_intro/blob/master/04_gpu_tools/README.md#dlprof).

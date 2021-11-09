@@ -20,7 +20,7 @@ AMD calls them Matrix Cores.
 
 # HPC
 
-NVIDIA has made the Tensor Cores through the CUDA API. This means that developers can take advantage of these specialized hardware units for workloads unrelated to deep learning.
+NVIDIA has made the Tensor Cores routines available through the CUDA API. This means that developers can take advantage of these specialized hardware units for workloads unrelated to deep learning.
 
 Follow these directions to see the examples:
 

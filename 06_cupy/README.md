@@ -40,7 +40,7 @@ for _ in range(3):
     Z = cp.matmul(X, Y)
     cp.cuda.Device(0).synchronize()
   times.append(perf_counter() - t0)
-print(min(times))
+print("Execution time is ", min(times))
 ```
 
 Follow the directions below to run the code above on the V100 and A100. We will consider two cases on the A100: with and without replacing FP32 with TF32. Recall, TF32 is 19 bits while FP32 is 32 bits.
@@ -91,7 +91,7 @@ CUPY_TF32=0 python myscript.py   # case 2
 # CUPY_TF32=1 python myscript.py   # case 3
 ```
 
-Submit the job and record the run time when it finishes.
+Submit the job and record the execution time when it finishes.
 
 #### Case 3: TF32 on the A100
 
@@ -109,7 +109,7 @@ And make the last three lines appear as follows:
 CUPY_TF32=1 python myscript.py   # case 3
 ```
 
-Submit the job and record the run time when it finishes.
+Submit the job and record the execution time when it finishes.
 
 Below are the results:
 

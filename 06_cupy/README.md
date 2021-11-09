@@ -25,9 +25,6 @@ CuPy version 8 and above can take advantage of the Tensor Cores on the A100 GPU.
 Consider the following Python code:
 
 ```python
-import cupy as cp
-from time import perf_counter
-
 N = 15000
 X = cp.random.randn(N, N, dtype=cp.float32)
 Y = cp.random.randn(N, N, dtype=cp.float32)

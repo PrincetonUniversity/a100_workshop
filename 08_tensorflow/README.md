@@ -1,5 +1,23 @@
 # TensorFlow
 
+## Installing
+
+Be careful. An install from the main channel using cudatoolkit-10.x and cudnn-7.x:
+
+```
+$ ssh della-gpu.princeton.edu
+$ module load anaconda3/2020.11
+$ conda create --name tf2-gpu tensorflow-gpu  # DO NOT DO THIS
+...
+cudatoolkit        pkgs/main/linux-64::cudatoolkit-10.1.243-h6bb024c_0
+cudnn              pkgs/main/linux-64::cudnn-7.6.5-cuda10.1_0
+...
+```
+
+See our [TensorFlow](https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow) page for installation directions.
+
+## Tensor Cores
+
 TensorFlow using TF32 in place a single precision for matrix-matrix multiplications and convolutions by default. [Mixed precision](https://www.tensorflow.org/guide/mixed_precision).
 
 ```

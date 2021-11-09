@@ -38,7 +38,8 @@ Below is a sample Slurm script:
 #SBATCH --mem=8G                 # total memory per node (default is 4 GB per CPU-core)
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
-#SBATCH --constraint=a100
+#SBATCH --constraint=a100        # v100 or a100
+#SBATCH --reservation=a100       # REMOVE THIS LINE AFTER THE WORKSHOP
 
 ./bf16TensorCoreGemm
 ```

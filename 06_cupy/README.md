@@ -45,9 +45,9 @@ print(min(times))
 
 Follow the directions below to run the code above on the V100 and A100. We will consider two cases on the A100: with and without replacing FP32 with TF32. Recall, TF32 is 19 bits while FP32 is 32 bits.
 
-#### Case 1
+#### Case 1: FP32 on the V100
 
-Run the code on the V100 GPU in FP32:
+
 
 ```
 $ cd a100_workshop/06_cupy
@@ -75,7 +75,7 @@ $ squeue -u $USER
 $ cat slurm-*.out
 ```
 
-#### Case 2
+#### Case 2: FP32 on the A100
 
 Run the code on the A100 GPU with TF32 turned off. Modify `job.slurm` as follows:
 
@@ -86,11 +86,13 @@ Run the code on the A100 GPU with TF32 turned off. Modify `job.slurm` as follows
 And the last line should be:
 
 ```
-CUPY_TF32=0 python myscript.py
+# python myscript.py               # case 1
+CUPY_TF32=0 python myscript.py   # case 2
+# CUPY_TF32=1 python myscript.py   # case 3
 ```
 
 
-#### Case 3
+#### Case 3: TF32 on the A100
 
 Run the code on the A100 GPU with TF32 turned off. Modify `job.slurm` as follows:
 
@@ -101,7 +103,9 @@ Run the code on the A100 GPU with TF32 turned off. Modify `job.slurm` as follows
 And the last line should be:
 
 ```
-CUPY_TF32=1 python myscript.py
+# python myscript.py               # case 1
+# CUPY_TF32=0 python myscript.py   # case 2
+CUPY_TF32=1 python myscript.py   # case 3
 ```
 
 

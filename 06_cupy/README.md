@@ -47,10 +47,10 @@ Follow the directions below to run the code above on the V100 and A100. We will 
 
 #### Case 1: FP32 on the V100
 
-
+The files are found here:
 
 ```
-$ cd a100_workshop/06_cupy
+$ cd a100_workshop/06_cupy/code
 ```
 
 Edit `job.slurm` so that the `v100` GPU will be used:
@@ -83,7 +83,7 @@ Run the code on the A100 GPU with TF32 turned off. Modify `job.slurm` as follows
 #SBATCH --constraint=a100
 ```
 
-And the last line should be:
+And make the last three lines appear as follows:
 
 ```
 # python myscript.py               # case 1
@@ -91,6 +91,7 @@ CUPY_TF32=0 python myscript.py   # case 2
 # CUPY_TF32=1 python myscript.py   # case 3
 ```
 
+Submit the job and record the run time when it finishes.
 
 #### Case 3: TF32 on the A100
 
@@ -100,7 +101,7 @@ Run the code on the A100 GPU with TF32 turned off. Modify `job.slurm` as follows
 #SBATCH --constraint=a100
 ```
 
-And the last line should be:
+And make the last three lines appear as follows:
 
 ```
 # python myscript.py               # case 1
@@ -108,27 +109,7 @@ And the last line should be:
 CUPY_TF32=1 python myscript.py   # case 3
 ```
 
-
-```bash
-#!/bin/bash
-#SBATCH --job-name=myjob         # create a short name for your job
-#SBATCH --nodes=1                # node count
-#SBATCH --ntasks=1               # total number of tasks across all nodes
-#SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --mem=128G
-#SBATCH --gres=gpu:1             # number of gpus per node
-#SBATCH --time=00:01:00          # total run time limit (HH:MM:SS)
-#SBATCH --constraint=a100        # v100 or a100
-#SBATCH --reservation=a100       # REMOVE THIS LINE AFTER THE WORKSHOP
-
-module purge
-module load anaconda3/2020.11
-conda activate /scratch/network/jdh4/CONDA/envs/cupy-env
-
-# python myscript.py               # case 1
-# CUPY_TF32=0 python myscript.py   # case 2
-# CUPY_TF32=1 python myscript.py   # case 3
-```
+Submit the job and record the run time when it finishes.
 
 Below are the results:
 

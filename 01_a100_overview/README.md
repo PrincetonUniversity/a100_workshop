@@ -15,6 +15,7 @@ The table below presents the key differences between a CPU and a GPU:
 |**cores**                 |          O(10)           |    O(1000) | 
 |**clock speed**           |          2-3 GHz         |    1 GHz   |
 | **memory size**          |          100-1000 GB     |   16-80 GB |
+| **memory bandwidth**          |     50-100 GB/s     |   800-1600 GB/s |
 | **cache size**           |          large           |   small    |
 | **control logic** |  performs well  | performs poorly |
 | **model**| task parallelism |SIMT|

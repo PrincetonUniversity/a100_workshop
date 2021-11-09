@@ -6,6 +6,7 @@
 #SBATCH --mem-per-cpu=16G        # memory per cpu-core (4G is default)
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
+#SBATCH --constraint=a100        # v100 or a100
 #SBATCH --reservation=a100       # REMOVE THIS LINE AFTER THE WORKSHOP
 
 ./vector_addition

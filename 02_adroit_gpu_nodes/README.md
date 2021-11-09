@@ -124,11 +124,15 @@ Legend:
   NV#  = Connection traversing a bonded set of # NVLinks
 ```
 
+What is the GPU topology of the [della-gpu nodes](https://researchcomputing.princeton.edu/systems/della#gpus)?
+
+
 ### NUMA domains on the CPU
 
-Both GPU nodes have two CPUs as revealed by lscpu. The memory of the two CPUs is made to behave like one large memory pool using NUMA (non-uniform memory access). Use the command below to see which CPU-cores belong to which NUMA  domain:
+Each Adroit GPU node has two CPUs as revealed by lscpu. The memory of the two CPUs is made to behave like one large memory pool using NUMA (non-uniform memory access). Use the command below to see which CPU-cores belong to which NUMA domain:
 
 ```
+$ ssh adroit-h11g2
 $ numactl -H
 available: 2 nodes (0-1)
 node 0 cpus: 0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46
@@ -143,7 +147,7 @@ node   0   1
   1:  20  10
 ```
 
-We see that there are two NUMA domains. The matrix at the bottom of the output shows the penalty for accessing different domains.
+We see that there are two NUMA domains. The matrix at the bottom of the output shows the penalty for accessing one domain from another.
 
 ### Theoretical Performance of adroit-h11g2
 

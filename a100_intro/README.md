@@ -70,6 +70,6 @@ The NVIDIA A100 was released in 2020. The slides below are taken from the [GTC 2
 
 # NVIDIA CUDA Toolkit 11
   
-The [CUDA Toolkit 11](https://developer.nvidia.com/cuda-toolkit) was developed specifically for the A100 GPU. It is composed of GPU libraries and tools. Software must use the CUDA Toolkit 11 in order to fully leverage all of the features of the the A100 GPU.
+The [CUDA Toolkit 11](https://developer.nvidia.com/cuda-toolkit) was developed specifically for the A100 GPU. It is composed of GPU libraries and tools. Software must use the CUDA Toolkit 11 in order to fully leverage all of the features of the A100 GPU. Some software that is built against the CUDA Toolkit 10.x will not use the A100 at all.
 
 

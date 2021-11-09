@@ -203,7 +203,7 @@ Below is job.slurm:
 #SBATCH --constraint=a100
 #SBATCH --reservation=a100
 
-./bandwidthTest --device=all --memory=pinned --mode=range --start=1000000 --end=10000000 --increment=1000000 --htod --dtoh --dtod
+./bandwidthTest --device=all --memory=pinned --mode=range --start=10000000 --end=100000000 --increment=10000000 --htod --dtoh --dtod
 ```
 
 Below are the results for multiple machines:

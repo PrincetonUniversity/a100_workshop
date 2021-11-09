@@ -4,7 +4,7 @@ See the [Hardware Resources](https://researchcomputing.princeton.edu/support/kno
 
 # Adroit (Hands-on Exercises)
 
-![Adroit Diagram](../01_a100_intro/images/adroit_2021-10-18.png)
+![Adroit Diagram](../01_a100_overview/images/adroit_2021-10-18.png)
 
 ```
 $ ssh <YourNetID>@adriot.princeton.edu

@@ -20,7 +20,9 @@ u, s, v = cp.linalg.svd(X)
 
 ## CuPy uses Tensor Cores
 
-CuPy can take advantage of the A100 since the release of version 8 of CuPy. It can be made use TensorFloat32 for FP32 matrix-matrix multiplies. However, by default this is turned off. Consider the following Python code below:
+CuPy version 8 and above can take advantage of the Tensor Cores on the A100 GPU. It can be made use TensorFloat32 for FP32 matrix-matrix multiplication. However, by default this is turned off.
+
+Consider the following Python code:
 
 ```python
 import cupy as cp
@@ -41,32 +43,36 @@ for _ in range(3):
 print(min(times))
 ```
 
-Follow the directions below to run the code above on the V100 and A100. We will consider two cases on the A100: one with TF32 and one without.
+Follow the directions below to run the code above on the V100 and A100. We will consider two cases on the A100: with and without replacing FP32 with TF32. Recall, TF32 is 19 bits while FP32 is 32 bits.
 
 #### Case 1
 
-Run the code on the V100 GPU.
+Run the code on the V100 GPU in FP32:
 
 ```
-$ cd a100_workshop/05_cupy
+$ cd a100_workshop/06_cupy
 ```
 
-Then make sure that the `v100` will be used:
+Edit `job.slurm` so that the `v100` GPU will be used:
 
 ```
 #SBATCH --constraint=v100
 ```
 
-And make the last line of `job.slurm`:
+And make the last three lines appear as follows:
 
-```
-python myscript.py
+```bash
+python myscript.py               # case 1
+# CUPY_TF32=0 python myscript.py   # case 2
+# CUPY_TF32=1 python myscript.py   # case 3
 ```
 
-Submit the job and record the run time:
+Submit the job and record the run time when it finishes:
 
 ```
 $ sbatch job.slurm
+$ squeue -u $USER
+$ cat slurm-*.out
 ```
 
 #### Case 2

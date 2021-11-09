@@ -2,7 +2,7 @@
 
 ## Setup for live workshop (11/09/2021)
 
-### Point your browser to `https://bit.ly/xxx`
+### Point your browser to `https://bit.ly/3kfTcya`
 
 + Connect to the eduroam wireless network
 
@@ -21,6 +21,9 @@ $ ssh -X <YourNetID>@adroit.princeton.edu
 ```
 $ ssh <YourNetID>@adroit.princeton.edu
 ```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you are new to Linux then consider using the [MyAdroit](https://myadroit.princeton.edu) web portal. In the main menu, click on "Clusters" and then "_Adroit Cluster Shell Access".
+
 
 + Clone the repo:
 

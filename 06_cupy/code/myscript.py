@@ -1,3 +1,4 @@
+import os
 import cupy as cp
 from time import perf_counter
 
@@ -13,4 +14,9 @@ for _ in range(3):
     Z = cp.matmul(X, Y)
     cp.cuda.Device(0).synchronize()
   times.append(perf_counter() - t0)
-print(min(times))
+print("execution time =", min(times))
+
+if "CUPY_TF32" in os.environ:
+  print("Using TF32") if int(os.environ["CUPY_TF32"]) else print("Using FP32")
+else:
+  print("Using FP32")

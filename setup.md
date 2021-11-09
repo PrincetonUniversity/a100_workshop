@@ -10,13 +10,7 @@
 
 + SSH to Adroit [(help)](https://researchcomputing.princeton.edu/faq/why-cant-i-login-to-a-clu). If you need an account then [request one](https://forms.rc.princeton.edu/registration/?q=adroit) on Adroit.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you have used graphical windows via X11 forwarding on the HPC clusters before then run the following command (with the appropriate X server running on your local machine):
-
-```
-$ ssh -X <YourNetID>@adroit.princeton.edu
-```
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you have no experience with using graphical windows on the HPC clusters then do:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Run this command to connect:
 
 ```
 $ ssh <YourNetID>@adroit.princeton.edu

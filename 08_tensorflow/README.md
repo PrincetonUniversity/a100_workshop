@@ -5,7 +5,7 @@
 Be careful. An install from the main channel using cudatoolkit-10.x and cudnn-7.x:
 
 ```
-$ ssh della-gpu.princeton.edu
+$ ssh <YourNetID>@della-gpu.princeton.edu
 $ module load anaconda3/2020.11
 $ conda create --name tf2-gpu tensorflow-gpu  # DO NOT DO THIS
 ...

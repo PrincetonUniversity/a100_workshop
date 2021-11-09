@@ -31,7 +31,7 @@ Don't worry about measuring the performance difference between the CPU and the G
 
 ## Aside on GPU Utilization
 
-Read about [Measuring GPU Utilization in Real Time](https://researchcomputing.princeton.edu/support/knowledge-base/gpu-computing#gpu-utilization). An example of a code that shows 100% GPU utilization but is only using a single thread is `a100_workshop/programming_review/spurious_high_utilization.cu`.
+Read about [Measuring GPU Utilization in Real Time](https://researchcomputing.princeton.edu/support/knowledge-base/gpu-computing#gpu-utilization). An example of a code that shows 100% GPU utilization but is only using a single thread is `a100_workshop/programming_review/code/spurious_high_utilization.cu`.
 
 To really know how effectively a GPU is being utilized one must measure the GPU occupancy using a profiler like [Nsight Compute](https://github.com/PrincetonUniversity/gpu_programming_intro/tree/master/04_gpu_tools#nsight-compute-ncu-for-gpu-kernel-profiling).
 

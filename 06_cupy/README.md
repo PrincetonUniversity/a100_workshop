@@ -111,6 +111,8 @@ CUPY_TF32=1 python myscript.py   # case 3
 
 Submit the job and record the execution time when it finishes.
 
+## Results
+
 Below are the results:
 
 | GPU                  | CUPY_TF32  | execution time (s)  |  speed-up factor   |

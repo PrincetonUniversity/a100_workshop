@@ -33,10 +33,9 @@ adroit-h11n1  class  mixed              109/128      0.01    238074/256000Mb    
 
 ## Hands-on Exercise
 
-Learn about NVIDIA GPU nodes on Adroit using the following commands:
+Learn about NVIDIA GPU nodes on Adroit by running the following commands:
 
 ```bash
-$ ssh <YourNetID>@adriot.princeton.edu
 $ snodes
 $ ssh adroit-h11g1
 (adroit-h11g1) $ nvidia-smi -a | less  # press q to quit
@@ -50,27 +49,15 @@ $ ssh adroit-h11g2
 (adroit-h11g2) $ exit
 ```
 
-1. Which node has the A100 GPUs? Which node has the V100 GPUs?
-1. How many GPUs are available on `adroit-h11g2`?
-2. Which NVIDIA A100 GPU is available (40GB PCIe, 80GB PCIe, 40GB SXM or 80GB SXM)?
-
-[PCIe](https://en.wikipedia.org/wiki/PCI_Express) is Principle Component Interconnect express.
-
-```
-Version 4.0: 16 GT/s
-×1: 1.97 GB/s
-×16: 31.5 GB/s
-```
-
-della-i16g1 has NVIDIA A100-SXM-80GB
+Which NVIDIA A100 GPU is available on adroit-h11g2 (40GB PCIe, 80GB PCIe, 40GB SXM or 80GB SXM)?
 
 ## Topology
 
-adroit A100
+The follow command provides insight into how the GPUs are connected or not connected:
 
 ```
 [aturing@adroit-h11g2 ~]$ nvidia-smi topo -m
-     GPU0	GPU1	GPU2	GPU3	mlx5_0	CPU Affinity	NUMA Affinity
+        GPU0	GPU1	GPU2	GPU3	mlx5_0	CPU Affinity	NUMA Affinity
 GPU0	 X 	NODE	SYS	SYS	NODE	0,2,4,6,8,10	0
 GPU1	NODE	 X 	SYS	SYS	NODE	0,2,4,6,8,10	0
 GPU2	SYS	SYS	 X 	NODE	SYS	1,3,5,7,9,11	1
@@ -87,19 +74,22 @@ Legend:
   PIX  = Connection traversing at most a single PCIe bridge
   NV#  = Connection traversing a bonded set of # NVLinks
 ```
+ 
+'mlx5_0' is the Mellanox network adapter. SYS indicates P2P and GPUDirect RDMA transactions cannot follow that path.
 
 For comparison see the [topology for Traverse](https://researchcomputing.princeton.edu/systems/traverse#smt) which gives:
 
 ```
-# ssh traverse
-$ salloc -N 1 -n 1 -t 1 --gres=gpu:4
-$ nvidia-smi topo -m
-	GPU0	mlx5_0	mlx5_1	mlx5_2	mlx5_3	CPU Affinity	NUMA Affinity
-GPU0	 X 	SYS	SYS	SYS	SYS	0-3	0,8,252-255
-mlx5_0	SYS	 X 	PIX	SYS	SYS		
-mlx5_1	SYS	PIX	 X 	SYS	SYS		
-mlx5_2	SYS	SYS	SYS	 X 	PIX		
-mlx5_3	SYS	SYS	SYS	PIX	 X 		
+[aturing@traverse-k02g8 ~]$ nvidia-smi topo -m
+	GPU0	GPU1	GPU2	GPU3	mlx5_0	mlx5_1	mlx5_2	mlx5_3	CPU Affinity	NUMA Affinity
+GPU0	 X 	NV3	SYS	SYS	NODE	NODE	SYS	SYS	0-63	0
+GPU1	NV3	 X 	SYS	SYS	NODE	NODE	SYS	SYS	0-63	0
+GPU2	SYS	SYS	 X 	NV3	SYS	SYS	NODE	NODE	64-127	8
+GPU3	SYS	SYS	NV3	 X 	SYS	SYS	NODE	NODE	64-127	8
+mlx5_0	NODE	NODE	SYS	SYS	 X 	PIX	SYS	SYS		
+mlx5_1	NODE	NODE	SYS	SYS	PIX	 X 	SYS	SYS		
+mlx5_2	SYS	SYS	NODE	NODE	SYS	SYS	 X 	PIX		
+mlx5_3	SYS	SYS	NODE	NODE	SYS	SYS	PIX	 X 		
 
 Legend:
 
@@ -115,7 +105,7 @@ Legend:
 Here is the topology for the new CryoEM nodes which may be used for TigerGPU:
 
 ```
-[aturing@della-i16g1 ~]$ nvidia-smi topo -m
+[aturing@della-xxxxx ~]$ nvidia-smi topo -m
 	GPU0	GPU1	GPU2	GPU3	mlx5_0	CPU Affinity	NUMA Affinity
 GPU0	 X 	NV4	NV4	NV4	NODE	0-23	0
 GPU1	NV4	 X 	NV4	NV4	NODE	0-23	0
@@ -133,7 +123,6 @@ Legend:
   PIX  = Connection traversing at most a single PCIe bridge
   NV#  = Connection traversing a bonded set of # NVLinks
 ```
-
 
 ### NUMA domains on the CPU
 

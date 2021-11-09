@@ -2,7 +2,7 @@
 
 ## Installing
 
-Be careful. An install from the main channel using cudatoolkit-10.x and cudnn-7.x:
+Be careful. A Conda install from the main channel pulls in `cudatoolkit-10.x` and `cudnn-7.x`:
 
 ```
 $ ssh <YourNetID>@della-gpu.princeton.edu
@@ -14,7 +14,7 @@ cudnn              pkgs/main/linux-64::cudnn-7.6.5-cuda10.1_0
 ...
 ```
 
-See our [TensorFlow](https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow) page for installation directions.
+See our [TensorFlow](https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow) page for the installation directions for the A100 clusters.
 
 ## Tensor Cores
 

@@ -160,7 +160,7 @@ COMPUTE_TYPE_DEFAULT will be used instead.
 
 The above suggests that CuPy may one day support `bfloat16`.
 
-More can be done with [CUB and cuTensor](https://tech.preferred.jp/en/blog/cupy-v8/). CuPy can do half-precision FFTs.
+More can be done with [CUB and cuTensor](https://tech.preferred.jp/en/blog/cupy-v8/). CuPy can do [half-precision FFTs](https://docs.cupy.dev/en/stable/user_guide/fft.html#half-precision-fft) through cuFFT.
 
 ## Installation
 

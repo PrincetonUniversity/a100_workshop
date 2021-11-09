@@ -167,7 +167,7 @@ Peak performance of the 2 CPUs:
 2 CPUs x 24 cores/CPU x 2.8e9 cycles/second x 2 VPUs/core x 2 FMA/cycle/VPU x 8 FP64 operations/FMA = 4.3 TFLOPS
 ```
 
-VPU is vector processing unit, FMA is fused multiply-add, 8 OPS/VPU is the width of a VPU for double precision numbers. This calculation shows that the GPU are roughly four times more powerful than the 2 CPUs.
+VPU is vector processing unit, FMA is fused multiply-add, 8 OPS/VPU is the width of a VPU for double precision numbers. This calculation shows that the GPUs are roughly four times more powerful than the 2 CPUs.
 
 ## Bandwidth Test
 

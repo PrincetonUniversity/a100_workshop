@@ -77,7 +77,7 @@ $ cat slurm-*.out
 
 #### Case 2: FP32 on the A100
 
-Run the code on the A100 GPU with TF32 turned off. Modify `job.slurm` as follows:
+Modify `job.slurm` as follows:
 
 ```
 #SBATCH --constraint=a100
@@ -95,7 +95,7 @@ Submit the job and record the run time when it finishes.
 
 #### Case 3: TF32 on the A100
 
-Run the code on the A100 GPU with TF32 turned off. Modify `job.slurm` as follows:
+Modify `job.slurm` as follows:
 
 ```
 #SBATCH --constraint=a100

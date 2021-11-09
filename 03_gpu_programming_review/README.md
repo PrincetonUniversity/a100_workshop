@@ -67,7 +67,7 @@ $ nvc -acc -gpu=cc70,cc80 -Minfo=all -o vector_addition vector_addition.c
 $ sbatch job.slurm
 ```
 
-Once again dont' worry about the performance. This exercise is only meant to serve as a reminder of OpenACC.
+Once again don't worry about the performance. This exercise is only meant to serve as a reminder of OpenACC.
 
 ## Useful Links
 

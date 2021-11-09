@@ -37,7 +37,7 @@ The [Aurora supercomputer](https://en.wikipedia.org/wiki/Aurora_(supercomputer))
 
 ![Intel GPU](https://cdn.mos.cms.futurecdn.net/eMmmDmFEGssKdpAYJ5v3fS-970-80.jpg)
 
-All the available Ponte Vecchio GPUs are going to build Aurora. Princeton will secure on for testing in 2022.
+All the available "Ponte Vecchio" GPUs are going to build Aurora. Princeton will secure one for testing in 2022.
 
 # NVIDIA GPUs for HPC
 

@@ -186,7 +186,7 @@ $ /usr/local/cuda-11.4/bin/cuda-install-samples-11.4.sh .
 $ cd NVIDIA_CUDA-11.4_Samples/1_Utilities/bandwidthTest
 $ module load cudatoolkit/11.4
 $ make
-$ sbatch job.slurm
+$ sbatch job.slurm  # create this file from below
 ```
 
 Below is job.slurm:
@@ -197,46 +197,16 @@ Below is job.slurm:
 #SBATCH --nodes=1                # node count
 #SBATCH --ntasks=1               # total number of tasks across all nodes
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --mem=4G                 # total memory per node (default is 4 GB per CPU-core)
+#SBATCH --mem=8G                 # total memory per node (default is 4 GB per CPU-core)
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
-#SBATCH --reservation=a100-wksp
-# SBATCH --constraint=a100
+#SBATCH --reservation=a100
+#SBATCH --constraint=a100
 
 ./bandwidthTest --device=all --memory=pinned --mode=range --start=1000000 --end=10000000 --increment=1000000 --htod --dtoh --dtod
 ```
 
-From `nvidia-smi -a`:
-
-```
-    PCI
-        Bus                               : 0x17
-        Device                            : 0x00
-        Domain                            : 0x0000
-        Device Id                         : 0x20F110DE
-        Bus Id                            : 00000000:17:00.0
-        Sub System Id                     : 0x145F10DE
-        GPU Link Info
-            PCIe Generation
-                Max                       : 4
-                Current                   : 4
-            Link Width
-                Max                       : 16x
-                Current                   : 16x
-        Bridge Chip
-            Type                          : N/A
-            Firmware                      : N/A
-        Replays Since Reset               : 0
-        Replay Number Rollovers           : 0
-        Tx Throughput                     : 0 KB/s
-        Rx Throughput                     : 0 KB/s
-
-```
-
-This leads to I believe that PCIe v4 is used on the AMD nodes.  If they connect x16 that should be 2GB/s each link so a max of 32 GB/s across the whole 16 links. So 25GB/s is close.
-
-
-Below are the results for Tiger and Della-GPU:
+Below are the results for multiple machines:
 
 ```
 ============= TIGERGPU ============= 
@@ -381,47 +351,3 @@ Device to Host Bandwidth, 1 Device(s)
 ```
 
 Why is it important to know these values? When deciding how to solve a problem and whether it is feasible. If you are not seeing the performance you expect then run this test to see what is the peak measured bandwidth.
-
-Compare everything to traverse. And do topology.
-
-https://github.com/jdh4/della-gpu-A100/blob/6bc648ec901aca02bb682ef9c8260058c46cfc7f/README.md
-
-```
-# traverse
-$ smi topo -m
-     GPU0	GPU1	GPU2	GPU3	mlx5_0	mlx5_1	mlx5_2	mlx5_3	CPU Affinity	NUMA Affinity
-GPU0	 X 	NV3	SYS	SYS	NODE	NODE	SYS	SYS	0-63	0
-GPU1	NV3	 X 	SYS	SYS	NODE	NODE	SYS	SYS	0-63	0
-GPU2	SYS	SYS	 X 	NV3	SYS	SYS	NODE	NODE	64-127	8
-GPU3	SYS	SYS	NV3	 X 	SYS	SYS	NODE	NODE	64-127	8
-mlx5_0	NODE	NODE	SYS	SYS	 X 	PIX	SYS	SYS		
-mlx5_1	NODE	NODE	SYS	SYS	PIX	 X 	SYS	SYS		
-mlx5_2	SYS	SYS	NODE	NODE	SYS	SYS	 X 	PIX		
-mlx5_3	SYS	SYS	NODE	NODE	SYS	SYS	PIX	 X 		
-
-Legend:
-
-  X    = Self
-  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
-  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
-  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
-  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
-  PIX  = Connection traversing at most a single PCIe bridge
-  NV#  = Connection traversing a bonded set of # NVLinks
-```
-
-```
-della-i16g1
-$ numactl -H
-available: 2 nodes (0-1)
-node 0 cpus: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
-node 0 size: 515346 MB
-node 0 free: 510311 MB
-node 1 cpus: 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
-node 1 size: 516087 MB
-node 1 free: 514509 MB
-node distances:
-node   0   1 
-  0:  10  32 
-  1:  32  10 
-```

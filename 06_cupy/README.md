@@ -150,9 +150,15 @@ array([[ 3.316953  ,  1.1977959 ,  1.2309666 ],
 
 We see that indeed the numbers are different so there is some loss of precision.
 
+If you try to use TF32 on the V100 you will encounter the following error:
+
 ```
-/scratch/network/jdh4/CONDA/envs/cupy-env/lib/python3.9/site-packages/cupy/_core/_gufuncs.py:225: UserWarning: COMPUTE_TYPE_BF16 and COMPUTE_TYPE_TF32 are only available on GPUs with compute capability 8.0 or higher. COMPUTE_TYPE_DEFAULT will be used instead.
+/scratch/network/jdh4/CONDA/envs/cupy-env/lib/python3.9/site-packages/cupy/_core/_gufuncs.py:225: UserWarning:
+COMPUTE_TYPE_BF16 and COMPUTE_TYPE_TF32 are only available on GPUs with compute capability 8.0 or higher.
+COMPUTE_TYPE_DEFAULT will be used instead.
 ```
+
+The suggests that CuPy may one day support `bfloat16`.
 
 More can be done with [CUB and cuTensor](https://tech.preferred.jp/en/blog/cupy-v8/). CuPy can do half-precision FFTs.
 

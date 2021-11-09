@@ -158,20 +158,15 @@ More can be done with [CUB and cuTensor](https://tech.preferred.jp/en/blog/cupy-
 
 ## Installation
 
-You do not need to install anything for the live workshop. Later on you can use these commands to install CuPy:
+You do not need to install anything for the live workshop. Later on you can use the commands below to install CuPy.
 
 #### Conda
 
-Make sure you get CUDA Toolkit 11.x to take full advantage of the A100 GPUs:
+Make sure you get `cudatoolkit-11.x` to take full advantage of the A100 GPUs:
 
 ```bash
 $ module load anaconda3/2020.11
 $ conda create --name cupy-env cupy --channel conda-forge
-```
-
-When installing via Anaconda or using a container, make sure you get the software built against CUDA Toolkit 11.x. For instance, with Conda:
-
-```
   ...
   cudatoolkit        conda-forge/linux-64::cudatoolkit-11.5.0-h36ae40a_9
   cupy               conda-forge/linux-64::cupy-9.5.0-py39h499daff_0
@@ -186,6 +181,10 @@ Find the tag for the desired version on the [CuPy DockerHub repo](https://hub.do
 
 ```
 $ singularity pull docker://cupy/cupy:v9.5.0
+$ singularity shell --containall cupy_v9.5.0.sif
+Singularity> find . -name "*cuda-11*" -type d 2>/dev/null
+./usr/local/cuda-11.2
+Singularity> exit
 ```
 
 Learn more about [Singularity](https://researchcomputing.princeton.edu/support/knowledge-base/singularity).

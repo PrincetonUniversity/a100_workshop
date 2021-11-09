@@ -41,7 +41,7 @@ You should see the following in the output file:
 TensorFloat-32 will be used for the matrix multiplication
 ```
 
-This is an indication of the FP32 MM being done in TF32.
+This is an indication of the FP32 matrix multiplication being done in TF32.
 
 ## Mixed precision
 

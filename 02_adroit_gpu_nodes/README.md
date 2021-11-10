@@ -33,7 +33,7 @@ adroit-h11n1  class  mixed              109/128      0.01    238074/256000Mb    
 
 ## Hands-on Exercise
 
-The schematic diagram below is for adroit-h11g2:
+The schematic diagram below is for adroit-h11g2 which is composed of two CPUs and four GPUs:
 
 ![adroit-h11g2](../01_a100_overview/images/adroit_a100_gpu_nodes.png)
 

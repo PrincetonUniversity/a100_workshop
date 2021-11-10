@@ -4,9 +4,11 @@ The NVIDIA A100 GPU will soon be found across the majority of the Research Compu
 
 This workshop provides an overview of the features of the A100 GPU along with specific use cases for deep learning (PyTorch and TensorFlow) and HPC. Tools for performance profiling and for measuring data transfer rates will be presented.
 
+<!--
 ## Workshop Survey
 
 Toward the end of the workshop please complete [this survey](https://forms.gle/rrBLgZYPjyLHYxFR7).
+-->
 
 ## Getting Help
 

@@ -114,9 +114,9 @@ Below are the results:
 
 | GPU                  | CUPY_TF32  | execution time (s)  |  speed-up factor   |
 |:--------------------:|:------------------:|:-----------:|:------------------:|
-|  V100                | N/A                |          |                 |
-|  A100                | 0                  |         |                 |
-|  A100                | 1                  |          |                 |
+|  V100                | N/A                |    5.3      |      1.0           |
+|  A100                | 0                  |    4.0      |      1.3           |
+|  A100                | 1                  |    0.8      |      6.5           |
 
 
 Rows 1 and 2 indicate that the A100 gives a speed-up of 1.3x over the V100. When the computation is performed in TensorFloat32 the speed-up is 6.5x. Is there a loss of precision?

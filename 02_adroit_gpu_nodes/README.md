@@ -201,7 +201,6 @@ Below is job.slurm:
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 #SBATCH --constraint=a100        $ v100 or a100
-#SBATCH --reservation=a100       # REMOVE THIS LINE AFTER THE WORKSHOP
 
 ./bandwidthTest --device=all --memory=pinned --mode=range --start=10000000 --end=100000000 --increment=10000000 --htod --dtoh --dtod
 ```

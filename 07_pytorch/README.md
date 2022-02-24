@@ -48,10 +48,6 @@ See the [PyTorch](https://github.com/PrincetonUniversity/install_pytorch) page f
 
 Mixed-precision training in PyTorch is done through [AMP](https://pytorch.org/docs/stable/amp.html).
 
-## dlprof
-
-The deep learning profiler from NVIDIA is called `dlprof`. See a sample script [here](https://github.com/PrincetonUniversity/gpu_programming_intro/blob/master/04_gpu_tools/README.md#dlprof).
-
 # Useful Links
 
 [PyTorch Data Types](https://pytorch.org/docs/stable/tensor_attributes.html)  

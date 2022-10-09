@@ -10,7 +10,7 @@
 
 module purge
 module load anaconda3/2020.11
-conda activate /scratch/network/jdh4/CONDA/envs/cupy-env
+conda activate /scratch/network/jdh4/.gpu_workshop/envs/cupy-env
 
 echo "GPU is " $(nvidia-smi -a | grep "Product Name" | awk '{print $(NF)}')
 

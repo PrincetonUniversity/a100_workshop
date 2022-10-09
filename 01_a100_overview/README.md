@@ -34,7 +34,7 @@ AMD will also produce the MI250, which can be used with AMD or Intel CPUs, and t
 
 ![AMD MI100 GPU](https://i.ytimg.com/vi/ulRHTMLnte4/maxresdefault.jpg)
 
-Princeton has one [AMD MI100 GPU](https://www.amd.com/en/products/server-accelerators/instinct-mi100) which is [available for testing](https://researchcomputing.princeton.edu/amd-mi100-gpu-testing). The MI100 has a performance that is in between the V100 and A100.
+Princeton has two AMD MI210 GPUs which is [available for testing](https://researchcomputing.princeton.edu/amd-mi100-gpu-testing).
 
 # Intel GPUs for HPC
 

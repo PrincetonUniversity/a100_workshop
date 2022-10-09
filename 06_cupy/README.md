@@ -124,7 +124,7 @@ Rows 1 and 2 indicate that the A100 gives a speed-up of 1.3x over the V100. When
 ```bash
 $ salloc -N 1 -n 1 -t 5 --gres=gpu:1 --constraint=a100
 $ module load anaconda3/2020.11
-$ conda activate /scratch/network/jdh4/CONDA/envs/cupy-env
+$ conda activate /scratch/network/jdh4/.gpu_workshop/envs/cupy-env
 $ env CUPY_TF32=0 CUPY_SEED=42 python
 >>> import cupy as cp
 >>> X = cp.random.randn(3, 3, dtype=cp.float32)
@@ -150,7 +150,7 @@ We see that indeed the numbers are different so there is some loss of precision.
 If you try to use TF32 on the V100 you will encounter the following error:
 
 ```
-/scratch/network/jdh4/CONDA/envs/cupy-env/lib/python3.9/site-packages/cupy/_core/_gufuncs.py:225: UserWarning:
+/scratch/network/jdh4/.gpu_workshop/envs/cupy-env/lib/python3.9/site-packages/cupy/_core/_gufuncs.py:225: UserWarning:
 COMPUTE_TYPE_BF16 and COMPUTE_TYPE_TF32 are only available on GPUs with compute capability 8.0 or higher.
 COMPUTE_TYPE_DEFAULT will be used instead.
 ```

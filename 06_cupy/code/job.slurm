@@ -9,7 +9,7 @@
 #SBATCH --constraint=v100        # v100 or a100
 
 module purge
-module load anaconda3/2020.11
+module load anaconda3/2022.5
 conda activate /scratch/network/jdh4/.gpu_workshop/envs/cupy-env
 
 echo "GPU is " $(nvidia-smi -a | grep "Product Name" | awk '{print $(NF)}')

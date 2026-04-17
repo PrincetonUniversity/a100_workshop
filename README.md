@@ -24,4 +24,4 @@ If you encounter any difficulties with the material in this guide then please se
 
 ## Authorship
 
-This guide was created by Jonathan Halverson and members of Princeton Research Computing.
+This guide was created by Xuefei Zhang, Jonathan Halverson, and members of Princeton Research Computing.

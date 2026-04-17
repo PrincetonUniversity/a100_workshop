@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+03_gpu_programming_review/code/vector_addition
+03_gpu_programming_review/code/vector_addition_openacc

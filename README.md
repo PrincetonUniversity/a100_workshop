@@ -4,6 +4,14 @@ The NVIDIA A100 GPU will soon be found across the majority of the Research Compu
 
 This workshop provides an overview of the features of the A100 GPU along with specific use cases for deep learning (PyTorch and TensorFlow) and HPC. Tools for performance profiling and for measuring data transfer rates will be presented.
 
+## Local Self-Study (Non-Slurm)
+
+If you already have a local machine with an NVIDIA A100, use [LOCAL_SELF_STUDY.md](LOCAL_SELF_STUDY.md). It adapts the workshop into a workstation-friendly path with local wrapper scripts under `scripts/local/`.
+
+## Princeton / Slurm Workshop Flow
+
+If you are following the original cluster-based workshop flow, start with [setup.md](setup.md) and then continue through the numbered directories in order.
+
 <!--
 ## Workshop Survey
 

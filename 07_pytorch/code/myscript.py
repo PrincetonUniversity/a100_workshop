@@ -1,10 +1,13 @@
 # https://pytorch.org/docs/stable/notes/cuda.html
 
+import os
 import torch
 from time import perf_counter
 
-a_full = torch.randn(10240, 10240, dtype=torch.double, device='cuda')
-b_full = torch.randn(10240, 10240, dtype=torch.double, device='cuda')
+N = int(os.environ.get("TORCH_N", "10240"))
+
+a_full = torch.randn(N, N, dtype=torch.double, device="cuda")
+b_full = torch.randn(N, N, dtype=torch.double, device="cuda")
 ab_full = a_full @ b_full
 mean = ab_full.abs().mean()
 print(mean)

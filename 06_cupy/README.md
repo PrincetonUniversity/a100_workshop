@@ -42,6 +42,16 @@ print("Execution time is ", min(times))
 
 Follow the directions below to run the code above on the V100 and A100. We will consider two cases on the A100: with and without replacing FP32 with TF32. Recall, TF32 is 19 bits while FP32 is 32 bits.
 
+### Local run (no Slurm)
+
+If you are learning on a local A100 workstation, use the wrapper below instead of `sbatch job.slurm`:
+
+```bash
+$ CUPY_N=4096 CUPY_OUTER_REPS=1 CUPY_INNER_REPS=1 scripts/local/run_06_cupy.sh
+```
+
+You can still use `CUPY_TF32=0` or `CUPY_TF32=1` to compare FP32 and TF32 behavior locally.
+
 #### Case 1: FP32 on the V100
 
 The files are found here:

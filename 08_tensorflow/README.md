@@ -43,6 +43,16 @@ TensorFloat-32 will be used for the matrix multiplication
 
 This is an indication of the FP32 matrix multiplication being done in TF32.
 
+## Local run (no Slurm)
+
+This repo did not originally ship a local TensorFlow example, but if you already have a working TensorFlow GPU install on an A100 workstation you can use:
+
+```bash
+$ scripts/local/run_08_tensorflow.sh
+```
+
+This runs a small local smoke test in `08_tensorflow/code/tf_gpu_smoke.py` and leaves the original Singularity example above unchanged.
+
 ## Mixed precision
 
 Mixed-precision training in TensorFlow is explained in the [mixed precision guide](https://www.tensorflow.org/guide/mixed_precision).

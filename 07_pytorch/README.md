@@ -42,6 +42,14 @@ $ cd a100_workshop/07_pytorch/code
 $ sbatch job.slurm
 ```
 
+### Local run (no Slurm)
+
+If you already have a local A100 workstation, you can run the same experiment directly. The script already measures both cases in one run: first with the default TF32-enabled matmul path, then with TF32 disabled.
+
+```bash
+$ TORCH_N=4096 scripts/local/run_07_pytorch.sh
+```
+
 See the [PyTorch](https://github.com/PrincetonUniversity/install_pytorch) page from Research Computing.
 
 ## Automatic Mixed Precision (AMP)

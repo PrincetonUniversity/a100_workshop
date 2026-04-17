@@ -25,6 +25,20 @@ $ sbatch job.slurm
 $ cat slurm-*.out
 ```
 
+### Local run (no Slurm)
+
+If you already have an A100 workstation, you can run the same exercise locally:
+
+```bash
+$ scripts/local/run_03_cuda.sh
+```
+
+If you also have the NVIDIA HPC SDK installed, you can try the OpenACC version locally:
+
+```bash
+$ scripts/local/run_03_openacc.sh
+```
+
 Note that you can build an executable for both the V100 and A100 with `-arch=sm_70,sm_80`.
 
 Don't worry about measuring the performance difference between the CPU and the GPU. The purpose of this exercise is simply to revisit CUDA.
